@@ -1,97 +1,61 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
 
 *{
-	font-family:"Poppins Regular";
+	font-family: 'Poppins', sans-serif;
 }
 
-#home{
-	height:100vh;
-	width:100%;
-	overflow:hidden;
-}
-
-.bg-header{
+#pg-home{
 	display:flex;
+	flex-direction:column;
 	justify-content:center;
+	align-items:center;
+	text-align:center;
 	width:100%;
 	height:100vh;
 	overflow:hidden;
 	align-items:center;
 	background-color:transparent;
-	background:url("../img/bg-header.jpg")fixed;
+	background:url("../img/bg-header.jpg") fixed;
 	background-size:cover;
-	backrgound-repeat:no-repeat;
 }
 
-/*
-.bg-header img{
-	max-width:100%;
-	min-height:100vh;
-	position:fixed;
-	z-index:-1;
+#pg-home h1{
+	color:#FFF;
+	font-weight:700;
+	font-size:72px;
+	position:relative;
 }
-*/
 
-.bg-opacidade{
+#pg-home p{
+	color:#FFF;
+	z-index:110;
+	position:relative;
+}
+
+#pg-home::before{
+	content:'';
 	width:100%;
 	height:100vh;
-	opacity:0.4;
+	opacity:0.5;
 	background-color:#000;
 	position:absolute;
-	z-index:1;
 }
 
-.bg-texto{
-	position:absolute;
-	width:100%;
-	height:100vh;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	flex-direction:column;
-	text-align:center;
-	color:#FFF;
-	z-index:2;
-}
-
-.bgt-titulo{
-	font-size:72px;
-	font-family:"Poppins Bold";
-}
-
-/*
-.bgt-titulo,
-.bgt-subtitulo{
-	text-shadow:1px 1px 10px #000;
-}
-*/
-
-.bg-arrow-down a{
-	margin-bottom:20px;
+#bgt-arrow-down{
 	animation-name:animArrow;
 	animation-iteration-count: infinite;
 	animation-duration:1s;
 	color:#FFF;
-}
-
-.bg-arrow-down{
 	position:absolute;
-	width:100%;
-	height:100vh;
-	display:flex;
-	justify-content:center;
-	align-items:flex-end;
-	z-index:3;
+	bottom:20px;
+	z-index:110;
 }
 
 @keyframes animArrow{
 	0% {margin-bottom:20px;}
 	50% {margin-bottom:10px;}
 	100% {margin-bottom:20px;}	
-}
-
-nav.navbar{
-	/*border-bottom:1px solid rgba(255, 255, 255, .1);*/
 }
 
 button.navbar-toggler{
@@ -148,59 +112,47 @@ nav.navbar.down{
 
 /* FIM TRANSIÇÃO */
 
-#quem_somos,
-#equipe,
-#servicos,
-#portfolio,
-#clientes,
-#contato{
+h1.pg--header-title{
+	font-weight:700;
+	position:relative;
+	color:#FFF;
+	font-size:72px;
+	text-align:center;
+}
+
+#pg-about,
+#pg-equipe,
+#pg-servicos,
+#pg-portfolio,
+#pg-clientes,
+#pg-contato{
 	background-color:#FFF;
 	width:100%;
 	z-index:3;
 	padding-top:82px;
 }
 
-.qs-img{
-	border-radius:1000px;
-	overflow:hidden;
+#pg-about figure{
+	background-image:url('../img/bg-about.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size: cover;
 }
 
-.qs-titulo{
-	font-size:40px;
+#pg-about h1{
+	font-weight:700;
 	color:#303030;
-	font-family:"Poppins Bold";
-	margin:0 0 10px;
+	font-size:30px;
 }
 
-.qs-titulo i{
-	color:#1565c0;
-	display:none;
+#pg-about p,
+#pg-about ul{
+	color:#909090;
 }
 
-.qs-sub{
-	font-size:20px;
-	color:#808080;
-}
+/* SECTION 'EQUIPE' */
 
-.eqp-titulo{
-	font-family:"Poppins Bold";
-	position:absolute;
-	width:100%;
-	color:#FFF;
-	z-index:2;
-	font-size:72px;
-	text-align:center;
-}
-
-.eqp-op{
-	position:absolute;
-	opacity:0.4;
-	width:100%;
-	height:300px;
-	background-color:#000;
-}
-
-.eqp-img{
+#pg-equipe-header{
 	width:100%;
 	height:300px;
 	overflow:hidden;
@@ -208,9 +160,18 @@ nav.navbar.down{
 	justify-content:center;
 	align-items:center;
 	background-color:transparent;
-	background:url("../img/bg-eqp.jpg")fixed;
+	background:url("../img/bg-eqp.jpg") fixed;
 	background-size:cover;
-	backrgound-repeat:no-repeat;
+
+}
+
+#pg-equipe-header::before{
+	content:'';
+	width:100%;
+	height:300px;
+	opacity:0.5;
+	background-color:#000;
+	position:absolute;
 }
 
 .eqp-member{
@@ -238,7 +199,7 @@ nav.navbar.down{
 
 .eqpm-nome{
 	font-size:30px;
-	font-family:"Poppins Bold";
+	font-weight:700;
 	color:#303030;
 	margin-top:10px;
 	text-align:center;
@@ -246,7 +207,7 @@ nav.navbar.down{
 
 .eqpm-func{
 	font-size:15px;
-	color:#808080;
+	color:#909090;
 	text-align:center;
 }
 
@@ -301,7 +262,9 @@ nav.navbar.down{
 	transition:0.3s;
 }
 
-.serv-bg{
+/***************************************/
+
+#pg-serv-header{
 	width:100%;
 	height:300px;
 	overflow:hidden;
@@ -309,9 +272,18 @@ nav.navbar.down{
 	justify-content:center;
 	align-items:center;
 	background-color:transparent;
-	background:url("../img/bg-services.jpg")fixed;
+	background:url("../img/bg-services.jpg") fixed;
 	background-size:cover;
-	backrgound-repeat:no-repeat;
+
+}
+
+#pg-serv-header::before{
+	content:'';
+	width:100%;
+	height:300px;
+	opacity:0.5;
+	background-color:#000;
+	position:absolute;
 }
 
 .mt-100{
@@ -341,18 +313,24 @@ nav.navbar.down{
 
 .sb-titulo{
 	font-size:30px;
-	font-family:"Poppins Bold";
+	font-weight:700;
 	color:#303030;
 	margin-top:10px;
 }
 
 .sb-sub{
 	font-size:15px;
-	color:#808080;
+	color:#909090;
 }
 
 .mt-20{
 	margin-top:20px;
+}
+
+#tech-text{
+	font-size:40px;
+	font-weight:700;
+	color:#303030;
 }
 
 .tech-logo{
@@ -364,7 +342,7 @@ nav.navbar.down{
 }
 
 .tech-logo i{
-	color:#808080;
+	color:#909090;
 	transition:0.3s;
 }
 
@@ -374,7 +352,7 @@ nav.navbar.down{
 .brand-js i:hover{color:#ffb300;transition:0.3s;}
 .brand-php i:hover{color:#4f5b93;transition:0.3s;}
 
-/* PORTFÓLIO */
+/* PORTFÓLIO 
 
 .port-bg{
 	width:100%;
@@ -433,11 +411,11 @@ nav.navbar.down{
 	overflow:hidden !important;
 }
 
-/* FIM PORTFÓLIO */
+*/
 
 /* CLIENTES */
 
-.client-bg{
+#pg-client-header{
 	width:100%;
 	height:300px;
 	overflow:hidden;
@@ -447,7 +425,16 @@ nav.navbar.down{
 	background-color:transparent;
 	background:url("../img/bg-client.jpg") fixed;
 	background-size:cover;
-	backrgound-repeat:no-repeat;
+
+}
+
+#pg-client-header::before{
+	content:'';
+	width:100%;
+	height:300px;
+	opacity:0.5;
+	background-color:#000;
+	position:absolute;
 }
 
 /* FIM CLIENTES */
@@ -455,7 +442,7 @@ nav.navbar.down{
 
 /* FOOTER */
 
-.footer{
+#pg-footer{
 	background-color:rgba(0,0,0,0.9);
 	width:100%;
 	color:#FFF;
@@ -464,7 +451,7 @@ nav.navbar.down{
 
 .f-titulo{
 	margin:20px 0;
-	font-family:"Poppins Bold";
+	font-weight:700;
 	text-transform:uppercase;
 	font-size:22px;
 	color:#FFF;
@@ -529,7 +516,7 @@ a.f-copyright:hover{
 }
 
 .f-text{
-	color:rgba(255,255,255,0.3);
+	color:rgba(255,255,255,0.8);
 	font-size:10px;
 	padding:10px 0;
 	text-align:center;
@@ -538,14 +525,13 @@ a.f-copyright:hover{
 }
 
 .f-text a{
-	color:rgba(255,255,255,0.3);
+	color:rgba(255,255,255,0.4);
 	text-decoration:none;
 	transition:0.3s;
 }
 
-.f-text:hover, .f-text:hover a{
-	color:rgba(255,255,255,0.6);
-	transition:0.3s;
+.f-text a:hover{
+	color:rgba(255,255,255,1);
 }
 
 .email:hover{
@@ -633,21 +619,6 @@ a.f-copyright:hover{
 
 /* FIM TO TOP */
 
-@font-face{
-	src:url("../fonts/Berlin-Sans-FB.ttf");
-	font-family:"Berlin Sans FB";
-}
-
-@font-face{
-	src:url("../fonts/Poppins-Regular.ttf");
-	font-family:"Poppins Regular";
-}
-
-@font-face{
-	src:url("../fonts/Poppins-Bold.ttf");
-	font-family:"Poppins Bold";
-}
-
 @media(max-width:991px){
 	.bg-header img{
 		min-width:991px;
@@ -681,6 +652,10 @@ a.f-copyright:hover{
 	.facebook{
 		justify-content:center;
 	}
+
+	#pg-about figure{
+		display:none;
+	}
 }
 
 @media(max-width:575px){
@@ -690,8 +665,8 @@ a.f-copyright:hover{
 }
 
 @media(max-width:425px){
-	.bgt-titulo,
-	.eqp-titulo{
+	#pg-home h1,
+	h1.pg--header-title{
 		font-size:56px !important;
 	}
 	
